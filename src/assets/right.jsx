@@ -21,7 +21,7 @@ const all = [
 ];
 
 const Proj = ({ title, i, link }) => {
-    const isVideo = i.endsWith('.webm') || i.endsWith('.gif');
+    const isVideo = i.endsWith('.webm');
     
     return (
         <div className="w-[80%] mt-4 bg-[#deeaff] rounded-lg px-4 py-2 font-inter shadow-lg h-fit">
