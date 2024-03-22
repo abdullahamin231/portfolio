@@ -1,0 +1,13 @@
+.magicpattern { 
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: repeat;
+    background-image: url("data:image/svg+xml;utf8,%3Csvg width=%222000%22 height=%221400%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3ClinearGradient id=%22a%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%237879f6%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23999af8%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22b%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23b7baf9%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23c9cbfa%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22c%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23dfdbff%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23e7e4ff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22d%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23afa5ff%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23c3bbff%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath fill=%22%236250ff%22 d=%22M0 0h2000v1400H0z%22%2F%3E%3Cpath d=%22M0 280c115.792-20.507 231.584-41.014 344-28 112.416 13.014 221.456 59.55 328 62 106.544 2.45 210.593-39.183 322-56 111.407-16.817 230.17-8.817 336 6 105.83 14.817 198.723 36.45 321 41 122.277 4.55 273.936-7.986 337-15 63.064-7.014 37.532-8.507 52-10l-40 1120H0Z%22 fill=%22url(%23a)%22%2F%3E%3Cpath d=%22M0 560c100.4-2.86 200.8-5.722 312-16 111.2-10.278 233.2-27.974 346-20 112.8 7.974 216.402 41.617 334 52 117.598 10.383 249.191-2.495 359-10s197.833-9.636 315-17c117.167-7.364 263.476-19.961 324-19 60.524.961 35.262 15.48 50 30l-40 840H0Z%22 fill=%22url(%23b)%22%2F%3E%3Cpath d=%22M0 840c115.047-1.265 230.093-2.53 338-1 107.907 1.53 208.674 5.854 323-4s242.212-33.886 354-30c111.788 3.886 207.48 35.691 315 50 107.52 14.309 226.87 11.122 351 3s253.037-21.178 307-25c53.963-3.822 32.982 1.589 52 7l-40 560H0Z%22 fill=%22url(%23c)%22%2F%3E%3Cpath d=%22M0 1120c119.889-6.713 239.778-13.426 354-12 114.222 1.426 222.778 10.992 332 4 109.222-6.992 219.112-30.542 322-29 102.888 1.542 198.774 28.176 311 45s240.792 23.837 368 28 253.06 5.475 305-1 29.97-20.738 48-35l-40 280H0Z%22 fill=%22url(%23d)%22%2F%3E%3C%2Fsvg%3E");
+  }
+
+  
+  html {
+    scroll-behavior: smooth;
+  }
