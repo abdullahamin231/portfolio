@@ -45,15 +45,15 @@ const Right = () => {
                 <div className='font-bold font-inter text-xl text-slate-800'>About Me</div>
                 <div className='text-gray-600'>
                     Fullstack developer from Islamabad, Pakistan. Currently pursuing a degree in Computer Science from FAST University Islamabad.
-                    I am really focused on learning about everything Web Development and Software Engineering and applying it to my own projects in unique and different ways.
+                    I am really focused on learning about everything about Computer Science and applying it to my own projects in unique and different ways.
                 </div>
                 <a href="mailto:abdullahamin231@gmail.com" target="_blank" rel="noopener noreferrer" className="flex flex-row items-center gap-2 text-blue-500 font-bold">
                     <span><img className="max-w-[20px]" src={mail} alt="" /></span> abdullahamin231@gmail.com
                 </a>
             </div>
-            <div className="w-[760px] bg-white rounded-lg overflow-scroll mt-4 px-6 py-8 font-inter shadow-lg h-[fit-content]">
+            <div className="w-[760px] bg-white rounded-lg overflow-scroll mt-4 px-6 py-8 font-inter shadow-lg">
                 <div className='font-bold font-inter text-xl  text-slate-800 border-b-[#0b0e0e39] border-b-[1px] pb-4'>Projects</div>
-                <div className='flex flex-row flex-wrap items-center gap-2  overflow-x-auto'>
+                <div className="overflow-x-auto whitespace-nowrap">
                     {all.map((item, index) => (
                         <Proj key={index} title={item.title} i={item.i} link={item.link} />
                     ))}

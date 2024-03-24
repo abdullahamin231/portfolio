@@ -10,12 +10,7 @@ export default function App() {
 
   return (
     <div
-      style={{
-        height: "100vh",
-        width: "100%",
-        overflowX: "hidden",
-      }}
-      className="magicpattern flex flex-row justify-center gap-5 pt-8"
+    className="magicpattern sm:flex-col md:flex-col flex lg:flex-row xl:flex-row 2xl:flex-row justify-center gap-5 pt-8"
     >
       <AnimatedCursor
         innerSize={0}
