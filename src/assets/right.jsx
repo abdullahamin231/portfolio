@@ -8,6 +8,9 @@ import chess from "./chess.png";
 import weather from "./weather.jpeg";
 import pl from "./pl.png"
 import sort from "./sort.webm";
+import Icon from '@mdi/react';
+import { mdiFileAccount } from '@mdi/js';
+
 
 import "../App.css";
 
@@ -42,14 +45,21 @@ const Proj = ({ title, i, link }) => {
 const Right = () => {
     return (
         <div className="flex flex-col items-center">
-            <div className="w-[760px] bg-white rounded-lg px-6 py-8 font-inter shadow-lg h-fit">
+            <div className="w-[760px] bg-white rounded-lg px-6 pt-8 pb-6 font-inter shadow-lg h-fit">
                 <div className='font-bold font-inter text-xl text-slate-800'>About Me</div>
                 <div className='text-gray-600'>
                     Fullstack developer from Islamabad, Pakistan. Currently pursuing a degree in Computer Science from FAST University Islamabad.
                     I am really focused on learning about everything about Computer Science and applying it to my own projects in unique and different ways.
                 </div>
-                <a href="mailto:abdullahamin231@gmail.com" target="_blank" rel="noopener noreferrer" className="flex flex-row items-center gap-2 text-blue-500 font-bold">
+                <a href="mailto:abdullahamin231@gmail.com" target="_blank" rel="noopener noreferrer" className="flex flex-row items-center gap-2 text-blue-800 font-bold">
                     <span><img className="max-w-[20px]" src={mail} alt="" /></span> abdullahamin231@gmail.com
+                </a>
+                <a href="Abdullah_Amin_Resume.pdfe.pdf" download="Abdullah_Amin_Resume.pdfe.pdf" className='flex flex-row gap-1 items-center'>
+                <Icon path={mdiFileAccount} size={1} /> 
+                <div className='pt-1 text-blue-800 font-bold' >
+                    Download my Resume 
+                </div>
+
                 </a>
             </div>
             <div className="w-[760px] bg-white rounded-lg overflow-scroll mt-4 px-6 py-8 font-inter shadow-lg">

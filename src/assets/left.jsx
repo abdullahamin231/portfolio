@@ -1,5 +1,6 @@
 import photo from '../../image0.jpeg';
 
+
 export default function Left(){
     return (
         <div className="flex flex-col items-center">
@@ -7,7 +8,6 @@ export default function Left(){
                 <img src={photo} className="w-full max-h-[150px] rounded-md object-cover object-top" alt="Profile Photo" />
                 <p className='font-bold pt-2 text-2xl text-slate-800'>Abdullah Amin</p>
                 <p className='pt-1 text-sm text-gray-700'>Fullstack Developer</p>
-
             </div>
             <div className='w-[300px] mt-4 bg-white rounded-lg px-6 py-8 font-inter shadow-lg h-fit'>
                 <div className='font-bold font-inter text-xl text-slate-800'>Information</div>
@@ -35,10 +35,12 @@ export default function Left(){
                     <div className='bg-blue-100 text-blue-500 font-600 px-4 rounded-md text-md'>MongoDB</div>
                     <div className='bg-blue-100 text-blue-500 font-600 px-4 rounded-md text-md'>Javascript</div>
                     <div className='bg-blue-100 text-blue-500 font-600 px-4 rounded-md text-md'>Express</div>
-                    
-
+                    <div className='bg-blue-100 text-blue-500 font-600 px-4 rounded-md text-md'>SQL</div>
+                    <div className='bg-blue-100 text-blue-500 font-600 px-4 rounded-md text-md'>C++</div>
+                    <div className='bg-blue-100 text-blue-500 font-600 px-4 rounded-md text-md'>Python</div>
                 </div>
             </div>
+
         </div>
     );
 }
