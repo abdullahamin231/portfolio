@@ -6,18 +6,19 @@ import shop from "./shop.gif";
 import chat from "./chat.png";
 import chess from "./chess.png";
 import weather from "./weather.jpeg";
+import pl from "./pl.png"
 import sort from "./sort.webm";
 
 import "../App.css";
 
 const all = [
-    {i: blog, title: "Blogging Website", link: "https://www.youtube.com/watch?v=CvYHiHCe7gI&feature=youtu.be"},
-    {i: poke, title: "Memory Card Game", link: "https://www.github.com/abdullahamin/memory-card"},
-    {i: chat, title: "Chat Application", link: "https://www.youtube.com/watch?v=i0BmRc4yxlM"},
-    {i: shop, title: "E-Commerce Website", link: "https://github.com/abdullahamin231/shopping-website"},
-    {i: chess, title: "Chess Game", link: "https://github.com/abdullahamin231/chess"},
-    {i: weather, title: "Weather App", link: "https://github.com/abdullahamin231/weather-app"},
-    {i: sort, title: "Sorting Visualizer", link: "https://github.com/abdullahamin231/sorting-algorithm-visualizer"},
+    {i: blog, title: "Blogging Website [React, Node]", link: "https://www.youtube.com/watch?v=CvYHiHCe7gI&feature=youtu.be"},
+    {i: poke, title: "Memory Card Game [React]", link: "https://www.github.com/abdullahamin/memory-card"},
+    {i: chat, title: "Chat Application [MERN]", link: "https://www.youtube.com/watch?v=i0BmRc4yxlM"},
+    {i: shop, title: "E-Commerce Website [MERN]", link: "https://github.com/abdullahamin231/shopping-website"},
+    {i: chess, title: "Chess Game [C++/SFML]", link: "https://github.com/abdullahamin231/chess"},
+    {i: weather, title: "Weather App [HTML/CSS, JS]", link: "https://github.com/abdullahamin231/weather-app"},
+    {i: sort, title: "Sorting Visualizer [C++/SFML]", link: "https://github.com/abdullahamin231/sorting-algorithm-visualizer"},
 ];
 
 const Proj = ({ title, i, link }) => {
@@ -54,6 +55,7 @@ const Right = () => {
             <div className="w-[760px] bg-white rounded-lg overflow-scroll mt-4 px-6 py-8 font-inter shadow-lg">
                 <div className='font-bold font-inter text-xl  text-slate-800 border-b-[#0b0e0e39] border-b-[1px] pb-4'>Projects</div>
                 <div className="overflow-x-auto whitespace-nowrap">
+                    <Proj key={1} title={"Premier League Statistics"} link={"https://www.github.com/abdullahamin231/league-frontend"} i={pl}/>
                     {all.map((item, index) => (
                         <Proj key={index} title={item.title} i={item.i} link={item.link} />
                     ))}
