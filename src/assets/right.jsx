@@ -1,6 +1,7 @@
 import React from 'react';
 import mail from "./mail.png";
 import blog from "./blog.png";
+import pvz from "./pvz.jpg"
 import poke from "./poke.gif";
 import shop from "./shop.gif";
 import chat from "./chat.png";
@@ -15,6 +16,7 @@ import { mdiFileAccount } from '@mdi/js';
 import "../App.css";
 
 const all = [
+    {i: pvz, title: "Plants Vs Zombies (Remake) [C++]", link: "https://github.com/abdullahamin231/project"},
     {i: blog, title: "Blogging Website [React, Node]", link: "https://www.youtube.com/watch?v=CvYHiHCe7gI&feature=youtu.be"},
     {i: poke, title: "Memory Card Game [React]", link: "https://www.github.com/abdullahamin/memory-card"},
     {i: chat, title: "Chat Application [MERN]", link: "https://www.youtube.com/watch?v=i0BmRc4yxlM"},
@@ -65,7 +67,6 @@ const Right = () => {
             <div className="w-[760px] bg-white rounded-lg overflow-scroll mt-4 px-6 py-8 font-inter shadow-lg">
                 <div className='font-bold font-inter text-xl  text-slate-800 border-b-[#0b0e0e39] border-b-[1px] pb-4'>Projects</div>
                 <div className="overflow-x-auto whitespace-nowrap">
-                    <Proj key={1} title={"Premier League Statistics"} link={"https://www.github.com/abdullahamin231/league-frontend"} i={pl}/>
                     {all.map((item, index) => (
                         <Proj key={index} title={item.title} i={item.i} link={item.link} />
                     ))}
