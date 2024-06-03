@@ -91,7 +91,7 @@ export default function Projects() {
   return (
     <div>
       <div className="flex flex-row  items-center gap-[3rem] pb-8">
-        <div className="w-[70%] h-[1px] bg-[#4b4b54]"></div>
+        <div className=" flex-grow h-[1px] bg-[#4b4b54]"></div>
         <SlideIn>
           <h1 className="text-[3rem] text-text font-inter font-900">
             Projects<span className="text-primary">.</span>

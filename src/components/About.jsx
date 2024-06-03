@@ -26,18 +26,18 @@ export default function About() {
 
   return (
     <div className="mb-40">
-      <div className="flex flex-row  items-center gap-[3rem] pb-8">
+      <div className="flex flex-row  items-center xl:gap-[3rem] lg:gap-[3rem] md:gap-[2rem] sm:gap-[1rem] xs:gap-4 pb-8">
         <SlideIn>
           <h1 className="text-[3rem] text-text font-inter font-900">
             About<span className="text-primary">.</span>
           </h1>
         </SlideIn>
-        <div className="w-[80%] h-[1px] bg-[#4b4b54]"></div>
+        <div className="flex-grow h-[1px] bg-[#4b4b54]"></div>
       </div>
 
       <div className="grid grid-cols-6 gap-8">
-        <div className="col-span-4">
-          <p className="text-[#D2D2D6] flex flex-col gap-7 items-start font-inter">
+        <div className="col-span-4 xs:col-span-3">
+          <p className="text-[#D2D2D6] text-lg xs:text-sm flex flex-col gap-7 items-start font-inter">
             <SlideIn>
               <span className="">
                 Hey! I'm Abdullah, if you haven't already gathered that by now.
@@ -46,16 +46,9 @@ export default function About() {
                 building with whatever tools are right for the job.
               </span>
             </SlideIn>
-            <SlideIn>
-              <span>
-                I'm passively looking for new positions where I can merge my
-                love for code with my love for the canvas. If you think you've
-                got an opening that I might like, let's connect 🔗
-              </span>
-            </SlideIn>
           </p>
           <SlideIn>
-            <div className="flex flex-row items-center gap-4">
+            <div className="flex mt-2 flex-row items-center gap-4">
               <a
                 target="_blank"
                 href="https://www.linkedin.com/in/abdullahamin231/"
@@ -84,7 +77,7 @@ export default function About() {
             </div>
           </SlideIn>
         </div>
-        <div className="col-span-2 flex flex-col gap-2">
+        <div className="col-span-2 xs:col-span-3 flex flex-col gap-2">
           <SlideIn>
             <h1 className="flex flex-row items-center gap-2 text-text font-600 text-lg font-poppins">
               <BiSolidTerminal color="6366F1" size={25} /> Use at work.
@@ -96,7 +89,7 @@ export default function About() {
               <SlideIn>
                 <div
                   key={index}
-                  className="bg-[#3F3F46] text-text font-poppins px-2 rounded-md py-1 text-sm w-fit"
+                  className="bg-[#3F3F46]  text-text font-poppins px-2 rounded-md py-1 xl:text-sm lg:text-sm md:text-sm sm:text-sm xs:text-xs w-fit"
                 >
                   {single}
                 </div>

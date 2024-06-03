@@ -8,9 +8,9 @@ import Contact from "./components/Contact";
 
 export default function App() {
   return (
-    <div className="bg-background min-h-[100vh]">
+    <div className="bg-background min-w-screen overflow-x-hidden">
       <Nav />
-      <div className="xl:px-[15rem] lg:px-[15rem] md:px-4 xs:px-4">
+      <div className="2xl:px-[15rem] xl:px-[15rem] lg:px-[10rem] md:px-[7rem] sm:px-[3rem] xs:px-8">
         <AnimatedCursor
           innerSize={0}
           outerSize={15}

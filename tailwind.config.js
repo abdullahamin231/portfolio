@@ -9,6 +9,7 @@ export default {
       background: "#18181B",
     },
     screens: {
+      xs: "375px",
       sm: "640px",
       // => @media (min-width: 640px) { ... }
 

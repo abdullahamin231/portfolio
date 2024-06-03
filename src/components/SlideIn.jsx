@@ -4,6 +4,7 @@ import { useInView } from "react-intersection-observer";
 
 export default function SlideIn({ children }) {
   const { ref, inView, entry } = useInView();
+
   const textLength = children.toString().length;
   const rectDuration =
     0.8 + Math.round(Math.random() * textLength) / textLength;
@@ -33,8 +34,8 @@ export default function SlideIn({ children }) {
           position: "relative",
           zIndex: 2,
         }}
-        initial={{ y: 120 }}
-        animate={{ y: inView ? 0 : 120 }}
+        initial={{ y: 270 }}
+        animate={{ y: inView ? 0 : 270 }}
         transition={{ duration: 0.9, delay: 0.5, ease: "easeInOut" }}
       >
         {children}
