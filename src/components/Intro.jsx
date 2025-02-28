@@ -16,18 +16,6 @@ export default function Intro() {
         </h2>
       </SlideIn>
 
-      <SlideIn>
-        <p className="max-w-2xl text-[1rem]">
-          I've spent the last year building and scaling software for some pretty
-          cool companies. Let's connect!
-        </p>
-      </SlideIn>
-
-      <SlideIn>
-        <button className="font-inter hover:bg-text hover:text-primary duration-200 transition-all hover:cursor-pointer  px-[1rem] py-[0.5rem] font-600 rounded-md bg-secondary text-[0.875rem]">
-          Contact Me
-        </button>
-      </SlideIn>
     </div>
   );
 }
