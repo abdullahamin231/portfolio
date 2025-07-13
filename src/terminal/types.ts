@@ -13,8 +13,8 @@ interface Directory {
 type FileSystemNode = File | Directory;
 
 
-const COMMANDS = ["help", "clear", "ls", "whoami", "cd", "cat"];
-type Command = typeof COMMANDS[number];
+const AVAILABLE_COMMANDS = ["help", "clear", "ls", "whoami", "cd", "cat"];
+type Command = typeof AVAILABLE_COMMANDS[number];
 
 interface CommandHistoryEntry {
     command: string;
@@ -36,4 +36,4 @@ const findNode = (path: string[], fs: Directory): FileSystemNode | undefined => 
 };
 
 export type { File, Directory, FileSystemNode, Command, CommandHistoryEntry };
-export { findNode };
+export { findNode, AVAILABLE_COMMANDS };

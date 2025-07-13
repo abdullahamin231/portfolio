@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { findNode, type Command, type CommandHistoryEntry, type Directory } from './types';
+import { AVAILABLE_COMMANDS, findNode, type Command, type CommandHistoryEntry, type Directory } from './types';
 import { fileSystem } from './fileSystem';
 
 interface UseTerminalReturn {
@@ -184,7 +184,39 @@ export function useTerminal(): UseTerminalReturn {
       }
     } else if (event.key === 'Tab') {
       event.preventDefault();
-      console.log('Implement autocompletion logic here');
+      const trimmedInput = inputValue.trim();
+      if (!trimmedInput) {
+        return;
+      }
+
+      const parts = trimmedInput.split(' ');
+      const commandPart = parts[0];
+      const argPart = parts.length > 1 ? parts[parts.length - 1] : '';
+      const prefix = parts.length > 1 ? parts.slice(0, -1).join(' ') + ' ' : '';
+
+      if (parts.length === 1) {
+        const matchingCommands = AVAILABLE_COMMANDS.filter(cmd => cmd.startsWith(commandPart));
+
+        if (matchingCommands.length === 1) {
+          setInputValue(matchingCommands[0] + ' ');
+        } else if (matchingCommands.length > 1) {
+          const output = matchingCommands.join('   ');
+          setCommandHistory(prev => [...prev, { command: trimmedInput, dir_name: directory.name, output }]);
+        }
+      } else {
+        let matching: string[] = [];
+        if (commandPart === 'cd') {
+          matching = Object.keys(directory.children).filter(name => name.startsWith(argPart) && directory.children[name].type === 'directory');
+        } else if (commandPart === 'cat') {
+          matching = Object.keys(directory.children).filter(name => name.startsWith(argPart) && directory.children[name].type === 'file');
+        }
+        if (matching.length === 1) {
+          setInputValue(prefix + matching[0]);
+        } else if (matching.length > 1) {
+          const output = matching.join('   ');
+          setCommandHistory(prev => [...prev, { command: trimmedInput, dir_name: directory.name, output }]);
+        }
+      }
     }
   };
 
