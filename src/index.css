@@ -1,1 +1,34 @@
 @import "tailwindcss";
+
+@theme {
+    --color-black: rgb(49, 49, 49);
+    --color-red: rgb(140, 70, 101);
+    --color-green: rgb(131, 163, 163);
+    --color-yellow: rgb(124, 124, 153);
+    --color-blue: rgb(74, 124, 179);
+    --color-magenta: rgb(94, 70, 140);
+    --color-cyan: rgb(7, 64, 105);
+    --color-white: rgb(137, 156, 161);
+    --color-brightBlack: rgb(61, 61, 61);
+    --color-brightRed: rgb(191, 77, 128);
+    --color-brightGreen: rgb(83, 166, 166);
+    --color-brightYellow: rgb(158, 158, 203);
+    --color-brightBlue: rgb(71, 122, 179);
+    --color-brightMagenta: rgb(126, 98, 179);
+    --color-brightCyan: rgb(96, 150, 191);
+    --color-brightWhite: rgb(192, 192, 192);
+    --color-background: #101010;
+    --color-foreground: rgb(198, 198, 193);
+    --color-cursor: rgb(153, 153, 153);
+
+    --font-jetbrains: "JetBrainsMono Nerd Font", "Fira Code", "Source Code Pro", "Courier New", monospace;
+
+}
+
+.arrow-right {
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 50%, calc(100% - 8px) 100%, 0 100%);
+}
+
+.arrow-left {
+    clip-path: polygon(8px 0, 100% 0, 100% 100%, 8px 100%, 0 50%);
+}
