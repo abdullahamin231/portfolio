@@ -1,6 +1,8 @@
 import { useState, useRef } from 'react';
 import "./index.css"
 
+type Command = "help" | "clear";
+
 function App() {
   const [inputValue, setInputValue] = useState('');
   const [commandHistory, setCommandHistory] = useState<string[]>([]);
@@ -8,13 +10,38 @@ function App() {
 
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleCommand = (command: Command) => {
+    switch (command) {
+      case "help":
+        // Display help information
+        setCommandHistory(prev => [...prev, "Available commands: help, clear"]);
+        break;
+      case "clear":
+        // Clear the terminal content
+        setCommandHistory([]);
+        break;
+      default:
+        // Handle unknown command
+        setCommandHistory(prev => [...prev, `Unknown command: ${command}`]);
+    }
+  }
+
+  const handleEnter = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
       event.preventDefault(); // Prevent default form submission if input was in a form
       if (inputValue.trim() !== '') {
-        setCommandHistory(prevHistory => [...prevHistory, inputValue]);
+        const command = inputValue.trim() as Command;
+        setCommandHistory(prev => [...prev, command]);
         setInputValue('');
-        setHistoryIndex(-1); // Reset history index
+        setHistoryIndex(-1); // Reset history index after executing command
+
+        // Handle the command
+        handleCommand(command);
+
+        // Scroll to the bottom of the terminal content
+        if (inputRef.current) {
+          inputRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        }
       }
     } else if (event.key === 'ArrowUp') {
       event.preventDefault();
@@ -58,17 +85,17 @@ function App() {
             <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
             <div className="w-3 h-3 bg-green-500 rounded-full"></div>
           </div>
-          <div className="text-gray-400 text-sm font-mono">Terminal</div>
+          <div className="text-gray-400 text-sm font-firacode">Terminal</div>
           <div className="w-16"></div> {/* Spacer for centering */}
         </div>
 
         {/* Terminal content */}
-        <div className="flex-1 p-4 overflow-y-auto">
+        <div className="flex-1 p-4 overflow-y-auto scrollbar-custom">
           {/* Command history display */}
           <div className="mb-2">
             {commandHistory.map((command, index) => (
               <div key={index} className="mb-1">
-                <div className="flex items-center text-base font-mono">
+                <div className="flex items-center text-base font-firacode">
                   <span className="bg-brightBlack text-foreground px-2 py-1 mr-1 rounded">abdullah@main</span>
                   <div className="bg-brightBlue text-brightBlack px-3 py-1 flex items-center mr-2 rounded">~</div>
                   <span className="text-green">{command}</span>
@@ -78,17 +105,17 @@ function App() {
           </div>
 
           {/* Current input line */}
-          <div className="flex items-center text-base font-mono">
+          <div className="flex items-center text-base font-firacode">
             <span className="bg-brightBlack text-foreground px-2 py-1 mr-1 rounded">abdullah@main</span>
             <div className="bg-brightBlue text-brightBlack px-3 py-1 flex items-center mr-2 rounded">~</div>
             <input
               ref={inputRef}
               type="text"
-              className="flex-1 bg-transparent border-none outline-none text-green caret-green"
+              className="flex-1 bg-transparent border-none outline-none text-foreground caret-green"
               autoFocus
               value={inputValue}
               onChange={handleInputChange}
-              onKeyDown={handleKeyDown}
+              onKeyDown={handleEnter}
               placeholder="help"
             />
           </div>
