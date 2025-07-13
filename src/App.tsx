@@ -1,66 +1,71 @@
 import { useState, useRef } from 'react';
-import "./index.css"
 
-type Command = "help" | "clear";
+type Command = "help" | "clear" | "ls" | "whoami";
 
 function App() {
   const [inputValue, setInputValue] = useState('');
-  const [commandHistory, setCommandHistory] = useState<string[]>([]);
-  const [historyIndex, setHistoryIndex] = useState<number>(-1); // -1 means not navigating history
+  const [commandHistory, setCommandHistory] = useState<{ command: string; output: string; }[]>([]);
+  const [historyIndex, setHistoryIndex] = useState<number>(-1);
 
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleCommand = (command: Command) => {
-    switch (command) {
+  const handleCommand = (command: string) => {
+    let output = '';
+
+    switch (command as Command) {
       case "help":
-        // Display help information
-        setCommandHistory(prev => [...prev, "Available commands: help, clear"]);
+        output = "Available commands: help, clear, ls, whoami";
         break;
       case "clear":
-        // Clear the terminal content
         setCommandHistory([]);
+        return;
+      case "ls":
+        output = `ls output`;
+        break;
+      case "whoami":
+        output = "abdullah";
         break;
       default:
-        // Handle unknown command
-        setCommandHistory(prev => [...prev, `Unknown command: ${command}`]);
+        output = `Command not found: ${command}`;
     }
-  }
+
+    setCommandHistory(prev => [...prev, { command, output }]);
+  };
 
   const handleEnter = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
-      event.preventDefault(); // Prevent default form submission if input was in a form
+      event.preventDefault();
       if (inputValue.trim() !== '') {
-        const command = inputValue.trim() as Command;
-        setCommandHistory(prev => [...prev, command]);
+        const command = inputValue.trim();
         setInputValue('');
-        setHistoryIndex(-1); // Reset history index after executing command
+        setHistoryIndex(-1);
 
-        // Handle the command
         handleCommand(command);
 
-        // Scroll to the bottom of the terminal content
-        if (inputRef.current) {
-          inputRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
-        }
+        // Scroll to the bottom
+        setTimeout(() => {
+          if (inputRef.current) {
+            inputRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+          }
+        }, 100);
       }
     } else if (event.key === 'ArrowUp') {
       event.preventDefault();
       if (commandHistory.length > 0) {
         const newIndex = historyIndex === -1 ? commandHistory.length - 1 : Math.max(0, historyIndex - 1);
         setHistoryIndex(newIndex);
-        setInputValue(commandHistory[newIndex]);
+        setInputValue(commandHistory[newIndex].command);
       }
     } else if (event.key === 'ArrowDown') {
       event.preventDefault();
       if (historyIndex !== -1) {
         const newIndex = Math.min(commandHistory.length - 1, historyIndex + 1);
         if (newIndex === commandHistory.length - 1 && historyIndex === commandHistory.length - 1) {
-          // If already at the last command and pressing down again, clear input
           setHistoryIndex(-1);
           setInputValue('');
         } else if (newIndex < commandHistory.length) {
           setHistoryIndex(newIndex);
-          setInputValue(commandHistory[newIndex]);
+          setInputValue(commandHistory[newIndex].command);
         }
       }
     }
@@ -68,7 +73,6 @@ function App() {
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
-    // If user starts typing after navigating history, reset index
     if (historyIndex !== -1) {
       setHistoryIndex(-1);
     }
@@ -77,7 +81,7 @@ function App() {
   return (
     <div className="bg-background font-jetbrains h-screen w-screen overflow-hidden p-4">
       {/* Terminal window frame */}
-      <div className="bg-black border border-gray-700 rounded-lg shadow-2xl h-full flex flex-col">
+      <div className="bg-background border border-gray-700 rounded-lg shadow-2xl h-full flex flex-col">
         {/* Terminal title bar */}
         <div className="bg-gray-800 border-b border-gray-700 px-4 py-2 flex items-center justify-between rounded-t-lg">
           <div className="flex items-center space-x-2">
@@ -86,19 +90,24 @@ function App() {
             <div className="w-3 h-3 bg-green-500 rounded-full"></div>
           </div>
           <div className="text-gray-400 text-sm font-firacode">Terminal</div>
-          <div className="w-16"></div> {/* Spacer for centering */}
+          <div className="w-16"></div>
         </div>
 
         {/* Terminal content */}
         <div className="flex-1 p-4 overflow-y-auto scrollbar-custom">
           {/* Command history display */}
           <div className="mb-2">
-            {commandHistory.map((command, index) => (
-              <div key={index} className="mb-1">
+            {commandHistory.map((entry, index) => (
+              <div key={index} className="mb-2">
+                {/* Command line */}
                 <div className="flex items-center text-base font-firacode">
                   <span className="bg-brightBlack text-foreground px-2 py-1 mr-1 rounded">abdullah@main</span>
                   <div className="bg-brightBlue text-brightBlack px-3 py-1 flex items-center mr-2 rounded">~</div>
-                  <span className="text-green">{command}</span>
+                  <span className="text-green">{entry.command}</span>
+                </div>
+                {/* Command output */}
+                <div className="text-foreground text-base mt-1 whitespace-pre-wrap font-firacode">
+                  {entry.output}
                 </div>
               </div>
             ))}
@@ -122,7 +131,7 @@ function App() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
