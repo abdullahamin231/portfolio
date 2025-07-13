@@ -47,6 +47,46 @@ export const fileSystem: Directory = {
           content: `Implemented a C++ simulation for financial models, enhancing performance and accuracy.`
         }
       }
+    },
+    "experience": {
+      type: 'directory',
+      name: 'experience',
+      children: {
+        "software_engineer.md": {
+          type: 'file',
+          name: 'software_engineer.md',
+          content: `
+          <div class="rounded-2xl p-6 shadow-xl">
+    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
+      <div class="text-lg font-semibold text-blue">Software Engineer -- Algozen</div>
+      <div class="text-base text-foreground">Remote, United States · Aug 2024 – Present</div>
+    </div>
+    <ul class="list-disc list-inside space-y-2 text-zinc-300">
+      <li><span class="font-semibold text-brightWhite">High-Performance Backtesting System:</span> Designed and maintained a high-performance computing system for financial strategy evaluation using Julia, handling large datasets with efficiency.</li>
+      <li><span class="font-semibold text-brightWhite">Performance Optimization:</span> Optimized backtesting logic, cutting run time by over 60% to boost efficiency.</li>
+      <li><span class="font-semibold text-brightWhite">End-to-End Ownership:</span> Led the full-stack lifecycle of features, integrating front-end, back-end, and tests for smooth deployments.</li>
+      <li><span class="font-semibold text-brightWhite">Testing & QA:</span> Developed Cypress E2E tests for front-end apps, improving reliability and UX.</li>
+      <li><span class="font-semibold text-brightWhite">CI/CD Automation:</span> Added pre-commit/push hooks for test automation, reducing regressions.</li>
+      <li><span class="font-semibold text-brightWhite">Agile Collaboration:</span> Contributed to daily standups and collaborated across teams to ensure consistent delivery.</li>
+    </ul>
+  </div>`
+        },
+        "software_engineering_intern.md": {
+          type: 'file',
+          name: 'software_engineering_intern.md',
+          content: `
+          <div class="rounded-2xl p-6 shadow-xl">
+    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
+      <div class="text-lg font-semibold text-blue">Software Engineering Intern -- Algozen</div>
+      <div class="text-base text-foreground">Remote, United States · Jun 2024 – Aug 2024</div>
+    </div>
+    <ul class="list-disc list-inside space-y-2 text-zinc-300">
+      <li><span class="font-semibold text-brightWhite">Strategy Visualization Tool:</span> Built an interactive tool for visualizing decision logic in trading strategies, improving clarity in market evaluations.</li>
+      <li><span class="font-semibold text-brightWhite">Testing & Reliability:</span> Wrote Jest unit tests for frontend components, ensuring robustness and preventing regressions.</li>
+    </ul>
+  </div>`
+        }
+      }
     }
   },
 };

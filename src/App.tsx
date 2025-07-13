@@ -46,7 +46,7 @@ function App() {
                   <span className="text-green">{entry.command}</span>
                 </div>
                 {/* Command output:  whitespace prewrap */}
-                <div className="text-foreground text-base mt-1 font-firacode" dangerouslySetInnerHTML={{ __html: entry.output }} />
+                <div className="text-foreground text-base mt-1" dangerouslySetInnerHTML={{ __html: entry.output }} />
               </div>
             ))}
           </div>
