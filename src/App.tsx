@@ -1,86 +1,21 @@
-import { useState, useRef } from 'react';
-
-type Command = "help" | "clear" | "ls" | "whoami" | "contact";
+import { useRef, useEffect } from 'react';
+import { useTerminal } from './hooks/useTerminal'; // Import the custom hook
 
 function App() {
-  const [inputValue, setInputValue] = useState('');
-  const [commandHistory, setCommandHistory] = useState<{ command: string; output: string; }[]>([]);
-  const [historyIndex, setHistoryIndex] = useState<number>(-1);
-
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleCommand = (command: string) => {
-    let output = '';
+  const {
+    inputValue,
+    commandHistory,
+    handleInputChange,
+    handleKeyPress,
+  } = useTerminal();
 
-    switch (command as Command) {
-      case "help":
-        output = `Available commands:\nhelp, clear, ls, whoami`;
-        break;
-      case "clear":
-        setCommandHistory([]);
-        return;
-      case "ls":
-        output = `experience    projects    contact\n\nUse 'whoami' to know more about me.`;
-        break;
-      case "whoami":
-        output = `Abdullah A.\nCurrently pursuing a Bachelor's degree in Computer Science (Junior Year) at FAST Islamabad.\nI’ve worked on real-world projects involving backtesting engines, C++ simulations, web development, and infrastructure using tools like DuckDB, Julia, React, and Docker.\nType 'ls experience' to see my work experience or 'ls projects' to see my projects .\nTo contact me, type 'contact'.`;
-
-        break;
-      default:
-        output = `Command not found: ${command}`;
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
     }
-
-    setCommandHistory(prev => [...prev, { command, output }]);
-  };
-
-  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Enter') {
-      event.preventDefault();
-      if (inputValue.trim() !== '') {
-        const command = inputValue.trim();
-        setInputValue('');
-        setHistoryIndex(-1);
-
-        handleCommand(command);
-
-        // Scroll to the bottom
-        setTimeout(() => {
-          if (inputRef.current) {
-            inputRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
-          }
-        }, 100);
-      }
-    } else if (event.key === 'ArrowUp') {
-      event.preventDefault();
-      if (commandHistory.length > 0) {
-        const newIndex = historyIndex === -1 ? commandHistory.length - 1 : Math.max(0, historyIndex - 1);
-        setHistoryIndex(newIndex);
-        setInputValue(commandHistory[newIndex].command);
-      }
-    } else if (event.key === 'ArrowDown') {
-      event.preventDefault();
-      if (historyIndex !== -1) {
-        const newIndex = Math.min(commandHistory.length - 1, historyIndex + 1);
-        if (newIndex === commandHistory.length - 1 && historyIndex === commandHistory.length - 1) {
-          setHistoryIndex(-1);
-          setInputValue('');
-        } else if (newIndex < commandHistory.length) {
-          setHistoryIndex(newIndex);
-          setInputValue(commandHistory[newIndex].command);
-        }
-      }
-    } else if (event.key === 'Tab') {
-      event.preventDefault();
-      console.log('Implement autocompletion logic here');
-    }
-  };
-
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
-    if (historyIndex !== -1) {
-      setHistoryIndex(-1);
-    }
-  };
+  }, [commandHistory]);
 
   return (
     <div className="bg-background font-jetbrains h-screen w-screen overflow-hidden p-4">
