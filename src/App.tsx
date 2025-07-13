@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react';
-import { useTerminal } from './hooks/useTerminal'; // Import the custom hook
+import { useTerminal } from './terminal/useTerminal'; // Import the custom hook
 
 function App() {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -45,10 +45,8 @@ function App() {
                   <div className="bg-brightBlue text-brightBlack px-3 py-1 flex items-center mr-2 rounded">{entry.dir_name}</div>
                   <span className="text-green">{entry.command}</span>
                 </div>
-                {/* Command output */}
-                <div className="text-foreground text-base mt-1 whitespace-pre-wrap font-firacode">
-                  {entry.output}
-                </div>
+                {/* Command output:  whitespace prewrap */}
+                <div className="text-foreground text-base mt-1 font-firacode" dangerouslySetInnerHTML={{ __html: entry.output }} />
               </div>
             ))}
           </div>
