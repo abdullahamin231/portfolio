@@ -1,11 +1,57 @@
 import { useState } from 'react';
 
-const COMMANDS = ["help", "clear", "ls", "whoami", "contact"];
+/**
+ * Root Structure:
+ * ls .
+ * contact.txt # user will cat contact.txt to see contact info
+ * technical_skills.txt
+ * download_resume.sh # script to download resume
+ * experience/ # directory containing experience files
+ *  - internship/ # directory containing internship details
+ * projects/ # directory containing project files
+ *  - project1/   # directory containing project details
+ * 
+ */
+
+interface File {
+  type: 'file';
+  name: string;
+  content: string;
+};
+
+interface Directory {
+  type: 'directory';
+  name: string;
+  children: { [name: string]: FileSystemNode };
+}
+
+type FileSystemNode = File | Directory;
+
+const fileSystem: Directory = {
+  type: 'directory',
+  name: '~',
+  children: {
+    "contact.md": {
+      type: 'file',
+      name: 'contact.md',
+      content: `You can reach me at:\nEmail: abdullahamin231@gmail.com\nLinkedIn: https://www.linkedin.com/in/abdullahamin231/\nGitHub: http://github.com/abdullahamin231/`
+    },
+    "technical_skills.md": {
+      type: 'file',
+      name: 'technical_skills.md',
+      content: `Technical Skills:\n- Languages: JavaScript/TypeScript, Julia, C, C++, Python\n- Frameworks/Libraries: React, Next.js, Socket.IO, Tailwind CSS, Cypress, Node.js, Express.js, Bun\n- Technologies: Supabase, Docker, GitHub, CI/CD, Linux\n- Databases: PostgreSQL, MongoDB, SQL Server`
+    },
+  },
+}
+
+
+
+const COMMANDS = ["help", "clear", "ls", "whoami", "contact", "cat"];
 type Command = typeof COMMANDS[number];
 
 interface CommandHistoryEntry {
   command: string;
-  dir: string;
+  dir_name: string;
   output: string;
 }
 
@@ -14,14 +60,14 @@ interface UseTerminalReturn {
   commandHistory: CommandHistoryEntry[];
   handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   handleKeyPress: (event: React.KeyboardEvent<HTMLInputElement>) => void;
-  dir: string;
+  directory: Directory;
 }
 
 export function useTerminal(): UseTerminalReturn {
   const [inputValue, setInputValue] = useState('');
   const [commandHistory, setCommandHistory] = useState<CommandHistoryEntry[]>([]);
   const [historyIndex, setHistoryIndex] = useState<number>(-1);
-  const [dir, setDir] = useState<string>('~'); // Current directory, default to home
+  const [directory, setDirectory] = useState<Directory>(fileSystem);
 
   const handleCommand = (command: string) => {
     let output = '';
@@ -46,7 +92,7 @@ export function useTerminal(): UseTerminalReturn {
         output = `Command not found: ${command}`;
     }
 
-    setCommandHistory(prev => [...prev, { command, dir: dir, output }]);
+    setCommandHistory(prev => [...prev, { command, dir_name: directory.name, output }]);
   };
 
   const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -95,6 +141,6 @@ export function useTerminal(): UseTerminalReturn {
     commandHistory,
     handleInputChange,
     handleKeyPress,
-    dir, // Expose current directory if needed
+    directory,
   };
 }
