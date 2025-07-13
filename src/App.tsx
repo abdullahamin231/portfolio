@@ -10,6 +10,7 @@ function App() {
     handleInputChange,
     handleKeyPress,
     directory,
+    currentPath
   } = useTerminal();
 
   useEffect(() => {
@@ -54,7 +55,7 @@ function App() {
           {/* Current input line */}
           <div className="flex items-center text-base font-firacode">
             <span className="bg-brightBlack text-foreground px-2 py-1 mr-1 rounded">abdullah@main</span>
-            <div className="bg-brightBlue text-brightBlack px-3 py-1 flex items-center mr-2 rounded">{directory.name}</div>
+            <div className="bg-brightBlue text-brightBlack px-3 py-1 flex items-center mr-2 rounded">{currentPath.join('/')}</div>
             <input
               ref={inputRef}
               type="text"

@@ -8,6 +8,7 @@ interface UseTerminalReturn {
   handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   handleKeyPress: (event: React.KeyboardEvent<HTMLInputElement>) => void;
   directory: Directory; // Return the current directory object
+  currentPath: string[]; // Return the current path as an array of strings
 }
 
 export function useTerminal(): UseTerminalReturn {
@@ -248,5 +249,6 @@ export function useTerminal(): UseTerminalReturn {
     handleInputChange,
     handleKeyPress,
     directory,
+    currentPath
   };
 }
