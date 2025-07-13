@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 
-type Command = "help" | "clear" | "ls" | "whoami";
+type Command = "help" | "clear" | "ls" | "whoami" | "contact";
 
 function App() {
   const [inputValue, setInputValue] = useState('');
@@ -23,7 +23,8 @@ function App() {
         output = `experience    projects    contact\n\nUse 'whoami' to know more about me.`;
         break;
       case "whoami":
-        output = "Abdullah A.";
+        output = `Abdullah A.\nCurrently pursuing a Bachelor's degree in Computer Science (Junior Year) at FAST Islamabad.\nI’ve worked on real-world projects involving backtesting engines, C++ simulations, web development, and infrastructure using tools like DuckDB, Julia, React, and Docker.\nType 'ls experience' to see my work experience or 'ls projects' to see my projects .\nTo contact me, type 'contact'.`;
+
         break;
       default:
         output = `Command not found: ${command}`;
@@ -32,7 +33,7 @@ function App() {
     setCommandHistory(prev => [...prev, { command, output }]);
   };
 
-  const handleEnter = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
       event.preventDefault();
       if (inputValue.trim() !== '') {
@@ -68,6 +69,9 @@ function App() {
           setInputValue(commandHistory[newIndex].command);
         }
       }
+    } else if (event.key === 'Tab') {
+      event.preventDefault();
+      console.log('Implement autocompletion logic here');
     }
   };
 
@@ -124,7 +128,7 @@ function App() {
               autoFocus
               value={inputValue}
               onChange={handleInputChange}
-              onKeyDown={handleEnter}
+              onKeyDown={handleKeyPress}
               placeholder="help"
             />
           </div>
