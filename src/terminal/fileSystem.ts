@@ -39,19 +39,54 @@ export const fileSystem: Directory = {
         "plants_vs_zombies.md": {
           type: 'file',
           name: 'plants_vs_zombies.md',
-          content: `Developed a Plants vs Zombies clone in C++.`
+          content: `
+          <h2>Developed a Plants vs Zombies clone in C++.</h2>
+          <ul class="list-disc pl-5">
+            <li>Implemented a complete game loop with real-time rendering and event handling.</li>
+            <li>Designed and developed various plant and zombie types with unique behaviors.</li>
+            <li>Utilized object-oriented programming principles for modular and maintainable code.</li>
+            <li>Implemented collision detection and game state management.</li>
+            <li>Implemented game state management using binary files for efficient saving and loading of progress.</li>
+            </ul>
+            <div class="flex flex-col items-start">
+              <a target="_blank" href="https://github.com/abdullahamin231/PlantsVsZombies" class="text-blue-500 hover:underline">Download from GitHub</a>
+              <a target="_blank" href="https://github.com/abdullahamin231/PlantsVsZombiesCode" class="text-blue-500 hover:underline">Read the Code</a>
+            </div>
+          `
         },
-        "c_backtesting_engine": {
+        "c_backtesting_engine.md": {
           type: 'file',
-          name: 'c_backtesting_engine',
-          content: `Developed a backtesting engine for trading strategies using C and PostgreSQL.`
+          name: 'c_backtesting_engine.md',
+          content: `
+          <h2>Backtesting Engine</h2>
+          <p>Developed a backtesting engine for trading strategies using C, json_reader.h and Apache Arrow.</p>
+          <ul class="list-disc pl-5">
+            <li>Developed a C-based backtesting framework designed to simulate and evaluate trading strategies on historical financial data, enabling traders and developers to assess strategy performance before live deployment.</li>
+            <li>Utilized core C programming concepts such as data structures, file I/O, and modular design, ensuring a lightweight, portable, and easily extensible codebase suitable for integration with other trading tools.</li>
+          </ul>
+          <a target="_blank" href="https://github.com/abdullahamin231/backtesting-c/" class="text-blue-500 hover:underline">View on GitHub</a>
+          `
         },
         "real_time_chat_app.md": {
           type: 'file',
           name: 'real_time_chat_app.md',
           content: `Created a real-time chat application using React, Next.js, and Socket.IO.`
         },
-
+        "atc_simulation.md": {
+          type: 'file',
+          name: 'atc_simulation.md',
+          content: `
+          <h2>Multi-threaded Air Traffic Control (ATC) Simulation</h2>
+          <ul class="list-disc pl-5">
+            <li>Built a multi-threaded Air Traffic Control (ATC) simulation in C++ to demonstrate core operating system (OS) concepts and principles.</li>
+            <li>Applied thread management and synchronization techniques (mutexes, condition variables) to coordinate concurrent aircraft operations.</li>
+            <li>Implemented process scheduling algorithms to model realistic aircraft movement and resource allocation.</li>
+            <li>Utilized memory management and inter-process communication (IPC) to facilitate safe data sharing between control tower and aircraft threads.</li>
+            <li>Demonstrated practical understanding of OS fundamentals by simulating real-time, concurrent system behavior within the ATC environment.</li>
+            <a target="_blank" href="https://github.com/abdullahamin231/atc-simulation" class="text-blue-500 hover:underline">View on GitHub</a>
+          </ul>
+          `
+        }
       }
     },
     "experience": {
