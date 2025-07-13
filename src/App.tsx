@@ -9,7 +9,6 @@ function App() {
     commandHistory,
     handleInputChange,
     handleKeyPress,
-    directory,
     currentPath
   } = useTerminal();
 
