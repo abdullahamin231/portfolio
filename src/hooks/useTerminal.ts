@@ -1,9 +1,11 @@
 import { useState } from 'react';
 
-type Command = "help" | "clear" | "ls" | "whoami" | "contact";
+const COMMANDS = ["help", "clear", "ls", "whoami", "contact"];
+type Command = typeof COMMANDS[number];
 
 interface CommandHistoryEntry {
   command: string;
+  dir: string;
   output: string;
 }
 
@@ -12,19 +14,21 @@ interface UseTerminalReturn {
   commandHistory: CommandHistoryEntry[];
   handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   handleKeyPress: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+  dir: string;
 }
 
 export function useTerminal(): UseTerminalReturn {
   const [inputValue, setInputValue] = useState('');
   const [commandHistory, setCommandHistory] = useState<CommandHistoryEntry[]>([]);
   const [historyIndex, setHistoryIndex] = useState<number>(-1);
+  const [dir, setDir] = useState<string>('~'); // Current directory, default to home
 
   const handleCommand = (command: string) => {
     let output = '';
 
     switch (command as Command) {
       case "help":
-        output = `Available commands:\nhelp, clear, ls, whoami`;
+        output = `Available commands:\n${COMMANDS.join(', ')}`;
         break;
       case "clear":
         setCommandHistory([]);
@@ -42,7 +46,7 @@ export function useTerminal(): UseTerminalReturn {
         output = `Command not found: ${command}`;
     }
 
-    setCommandHistory(prev => [...prev, { command, output }]);
+    setCommandHistory(prev => [...prev, { command, dir: dir, output }]);
   };
 
   const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -91,5 +95,6 @@ export function useTerminal(): UseTerminalReturn {
     commandHistory,
     handleInputChange,
     handleKeyPress,
+    dir, // Expose current directory if needed
   };
 }

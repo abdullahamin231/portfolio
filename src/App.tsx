@@ -9,6 +9,7 @@ function App() {
     commandHistory,
     handleInputChange,
     handleKeyPress,
+    dir
   } = useTerminal();
 
   useEffect(() => {
@@ -41,7 +42,7 @@ function App() {
                 {/* Command line */}
                 <div className="flex items-center text-base font-firacode">
                   <span className="bg-brightBlack text-foreground px-2 py-1 mr-1 rounded">abdullah@main</span>
-                  <div className="bg-brightBlue text-brightBlack px-3 py-1 flex items-center mr-2 rounded">~</div>
+                  <div className="bg-brightBlue text-brightBlack px-3 py-1 flex items-center mr-2 rounded">{entry.dir}</div>
                   <span className="text-green">{entry.command}</span>
                 </div>
                 {/* Command output */}
@@ -55,7 +56,7 @@ function App() {
           {/* Current input line */}
           <div className="flex items-center text-base font-firacode">
             <span className="bg-brightBlack text-foreground px-2 py-1 mr-1 rounded">abdullah@main</span>
-            <div className="bg-brightBlue text-brightBlack px-3 py-1 flex items-center mr-2 rounded">~</div>
+            <div className="bg-brightBlue text-brightBlack px-3 py-1 flex items-center mr-2 rounded">{dir}</div>
             <input
               ref={inputRef}
               type="text"
