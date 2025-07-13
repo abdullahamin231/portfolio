@@ -36,22 +36,43 @@ export const fileSystem: Directory = {
       type: 'directory',
       name: 'projects',
       children: {
-        "backtesting_engine.md": {
+        "plants_vs_zombies.md": {
           type: 'file',
-          name: 'backtesting_engine.md',
-          content: `Developed a backtesting engine for trading strategies using Python and PostgreSQL.`
+          name: 'plants_vs_zombies.md',
+          content: `Developed a Plants vs Zombies clone in C++.`
         },
-        "c++_simulation.md": {
+        "c_backtesting_engine": {
           type: 'file',
-          name: 'c++_simulation.md',
-          content: `Implemented a C++ simulation for financial models, enhancing performance and accuracy.`
-        }
+          name: 'c_backtesting_engine',
+          content: `Developed a backtesting engine for trading strategies using C and PostgreSQL.`
+        },
+        "real_time_chat_app.md": {
+          type: 'file',
+          name: 'real_time_chat_app.md',
+          content: `Created a real-time chat application using React, Next.js, and Socket.IO.`
+        },
+
       }
     },
     "experience": {
       type: 'directory',
       name: 'experience',
       children: {
+        "frontend_engineer.md": {
+          type: 'file',
+          name: 'frontend_engineer.md',
+          content: `
+          <div class="rounded-2xl p-6 shadow-xl">
+    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
+      <div class="text-lg font-semibold text-blue">Frontend Engineer -- Fastrack</div>
+      <div class="text-base text-foreground">Islamabad, Pakistan · Jun 2025 – Present</div>
+    </div>
+    <ul class="list-disc list-inside space-y-2 text-zinc-300">
+      <li><span class="font-semibold text-brightWhite">Landing Page Development:</span> Engineered a responsive and visually precise landing page using React, ensuring seamless user experience across devices.</li>
+    </ul>
+  </div>
+          `
+        },
         "software_engineer.md": {
           type: 'file',
           name: 'software_engineer.md',
@@ -61,13 +82,13 @@ export const fileSystem: Directory = {
       <div class="text-lg font-semibold text-blue">Software Engineer -- Algozen</div>
       <div class="text-base text-foreground">Remote, United States · Aug 2024 – Present</div>
     </div>
-    <ul class="list-disc list-inside space-y-2 text-zinc-300">
-      <li><span class="font-semibold text-brightWhite">High-Performance Backtesting System:</span> Designed and maintained a high-performance computing system for financial strategy evaluation using Julia, handling large datasets with efficiency.</li>
-      <li><span class="font-semibold text-brightWhite">Performance Optimization:</span> Optimized backtesting logic, cutting run time by over 60% to boost efficiency.</li>
-      <li><span class="font-semibold text-brightWhite">End-to-End Ownership:</span> Led the full-stack lifecycle of features, integrating front-end, back-end, and tests for smooth deployments.</li>
-      <li><span class="font-semibold text-brightWhite">Testing & QA:</span> Developed Cypress E2E tests for front-end apps, improving reliability and UX.</li>
-      <li><span class="font-semibold text-brightWhite">CI/CD Automation:</span> Added pre-commit/push hooks for test automation, reducing regressions.</li>
-      <li><span class="font-semibold text-brightWhite">Agile Collaboration:</span> Contributed to daily standups and collaborated across teams to ensure consistent delivery.</li>
+    <ul class="list-disc list-inside space-y-2">
+      <li><span class="font-semibold text-brightWhite">High-Performance Backtesting System:</span> Designed and maintained a scalable computing system for financial strategy evaluation using Julia, optimizing data processing for large datasets.</li>
+      <li><span class="font-semibold text-brightWhite">Performance Optimization:</span> Enhanced backtesting algorithms, reducing execution time by over 60% for improved efficiency.</li>
+      <li><span class="font-semibold text-brightWhite">End-to-End Ownership:</span> Spearheaded the full-stack development lifecycle, integrating front-end, back-end, and testing workflows for streamlined deployments.</li>
+      <li><span class="font-semibold text-brightWhite">Testing & QA:</span> Implemented Cypress E2E tests for front-end applications, ensuring reliability and superior user experience.</li>
+      <li><span class="font-semibold text-brightWhite">CI/CD Automation:</span> Developed pre-commit/push hooks for automated testing, minimizing regressions and enhancing code quality.</li>
+      <li><span class="font-semibold text-brightWhite">Agile Collaboration:</span> Actively contributed to daily standups and cross-team collaboration to ensure consistent and timely delivery of features.</li>
     </ul>
   </div>`
         },
@@ -80,9 +101,9 @@ export const fileSystem: Directory = {
       <div class="text-lg font-semibold text-blue">Software Engineering Intern -- Algozen</div>
       <div class="text-base text-foreground">Remote, United States · Jun 2024 – Aug 2024</div>
     </div>
-    <ul class="list-disc list-inside space-y-2 text-zinc-300">
-      <li><span class="font-semibold text-brightWhite">Strategy Visualization Tool:</span> Built an interactive tool for visualizing decision logic in trading strategies, improving clarity in market evaluations.</li>
-      <li><span class="font-semibold text-brightWhite">Testing & Reliability:</span> Wrote Jest unit tests for frontend components, ensuring robustness and preventing regressions.</li>
+    <ul class="list-disc list-inside space-y-2 ">
+      <li><span class="font-semibold text-brightWhite">Strategy Visualization Tool:</span> Developed an interactive tool for visualizing decision logic in trading strategies, enhancing clarity in market evaluations.</li>
+      <li><span class="font-semibold text-brightWhite">Testing & Reliability:</span> Authored Jest unit tests for frontend components, ensuring robustness and preventing regressions.</li>
     </ul>
   </div>`
         }

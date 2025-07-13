@@ -35,6 +35,7 @@ export function useTerminal(): UseTerminalReturn {
           <li><strong>whoami:</strong> Displays information about the user.</li>
           <li><strong>cd [directory]:</strong> Changes the current directory. Use <code>cd ..</code> to go up one level.</li>
           <li><strong>cat [file]:</strong> Displays the contents of the specified file.</li>
+          <li><strong>download_resume:</strong> Downloads my resume.</li>
         </ul>
       </div>
     `;
@@ -117,6 +118,17 @@ export function useTerminal(): UseTerminalReturn {
     }
   };
 
+  const handleDownloadResume = () => {
+    const link = document.createElement('a');
+    link.href = '/portfolio/Abdullah_Amin_Resume.pdf'; // path relative to public/
+    link.setAttribute('download', 'Abdullah_Amin_Resume.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    return `<p>Downloading resume...</p>`;
+  };
+
+
   const handleCommand = (command: string) => {
     const parts = command.trim().split(' ');
     const cmd = parts[0] as Command;
@@ -144,6 +156,9 @@ export function useTerminal(): UseTerminalReturn {
         break;
       case "cat":
         output = handleCat(arg);
+        break;
+      case "download_resume":
+        output = handleDownloadResume();
         break;
       default:
         output = `Command not found: ${cmd}`;

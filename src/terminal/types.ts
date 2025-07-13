@@ -13,7 +13,7 @@ interface Directory {
 type FileSystemNode = File | Directory;
 
 
-const AVAILABLE_COMMANDS = ["help", "clear", "ls", "whoami", "cd", "cat"];
+const AVAILABLE_COMMANDS = ["help", "clear", "ls", "whoami", "cd", "cat", "download_resume"];
 type Command = typeof AVAILABLE_COMMANDS[number];
 
 interface CommandHistoryEntry {
