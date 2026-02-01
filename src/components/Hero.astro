@@ -1,0 +1,41 @@
+---
+// Hero section component
+---
+
+<section class="min-h-screen flex flex-col items-center justify-center px-6 relative">
+  <!-- Subtle gradient background -->
+  <div class="absolute inset-0 bg-gradient-to-b from-zinc-950 via-zinc-900/50 to-zinc-950 pointer-events-none"></div>
+  
+  <div class="relative z-10 text-center max-w-3xl mx-auto">
+    <!-- Name -->
+    <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-4 bg-gradient-to-r from-zinc-100 to-zinc-400 bg-clip-text text-transparent">
+      Abdullah Amin
+    </h1>
+    
+    <!-- Tagline -->
+    <p class="text-xl md:text-2xl text-zinc-400 mb-8">
+      Systems & Web Developer
+    </p>
+    
+    <!-- Brief intro -->
+    <p class="text-zinc-500 text-lg max-w-xl mx-auto mb-12">
+      Building robust applications from low-level systems to modern web experiences.
+    </p>
+    
+    <!-- Scroll indicator -->
+    <a 
+      href="#experience" 
+      class="inline-flex items-center gap-2 text-zinc-500 hover:text-zinc-300 transition-colors duration-300"
+    >
+      <span class="text-sm">View Experience</span>
+      <svg 
+        class="w-4 h-4 animate-bounce" 
+        fill="none" 
+        stroke="currentColor" 
+        viewBox="0 0 24 24"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </a>
+  </div>
+</section>

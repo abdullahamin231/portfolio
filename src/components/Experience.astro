@@ -1,0 +1,80 @@
+---
+// Experience section component
+
+const experiences = [
+  {
+    title: "Software Engineer",
+    company: "BacktestKing",
+    location: "United States, Remote",
+    period: "Aug 2024 – Present",
+    highlights: [
+      "Designed and owned a low-latency quantitative trading platform composed of a C++ backtesting engine, Node.js execution control plane, Next.js frontend, and data ingestion pipelines, supporting both historical simulation and live trading.",
+      "Refactored a monolithic execution workflow into compute-isolated microservices and implemented HMAC-signed, replay-protected APIs to ensure authenticated, idempotent communication between pricing and backtesting services.",
+      "Reduced frontend request latency by 30% under concurrent backtests by isolating CPU-intensive execution paths behind dedicated backend services.",
+      "Implemented a nightly market-data ingestion pipeline using Tiingo feeds and libmdbx-backed storage to maintain authoritative OHLC datasets.",
+      "Scaled live trading execution to hundreds of concurrent users during market hours by introducing Piscina-based worker pools.",
+      "Reduced backtest execution latency by 10× by redesigning core C++ execution paths using vectorized computations and cache-efficient data layouts.",
+      "Debugged and validated the backtesting engine, improving result accuracy to 95% against verified reference strategies."
+    ]
+  },
+  {
+    title: "Software Engineering Intern",
+    company: "BacktestKing",
+    location: "United States, Remote",
+    period: "June 2024 – Aug 2024",
+    highlights: [
+      "Developed an interactive strategy-visualization system that traces conditional decision paths across simulated market scenarios, improving debuggability and strategy validation for traders.",
+      "Improved frontend reliability during rapid feature iteration by introducing Jest-based unit tests for critical UI components and user flows."
+    ]
+  }
+];
+---
+
+<section id="experience" class="py-24 px-6">
+  <div class="max-w-4xl mx-auto">
+    <!-- Section header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-zinc-100 mb-4">
+        Experience
+      </h2>
+      <p class="text-zinc-500 max-w-lg mx-auto">
+        Building high-performance systems and scalable applications.
+      </p>
+    </div>
+    
+    <!-- Timeline -->
+    <div class="relative">
+      <!-- Vertical line -->
+      <div class="absolute left-0 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-zinc-800"></div>
+      
+      {experiences.map((exp, index) => (
+        <div class={`relative flex flex-col md:flex-row gap-8 mb-12 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+          <!-- Timeline dot -->
+          <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-3 h-3 bg-zinc-600 rounded-full border-4 border-zinc-950 z-10"></div>
+          
+          <!-- Content card -->
+          <div class={`ml-8 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12 md:text-right'}`}>
+            <div class={`p-6 bg-zinc-900/50 border border-zinc-800 rounded-xl hover:border-zinc-700 transition-colors ${index % 2 === 0 ? '' : 'md:ml-auto'}`}>
+              <!-- Header -->
+              <div class={`mb-4 ${index % 2 === 0 ? '' : 'md:text-right'}`}>
+                <h3 class="text-xl font-semibold text-zinc-100">{exp.title}</h3>
+                <p class="text-zinc-400 font-medium">{exp.company}</p>
+                <p class="text-sm text-zinc-500">{exp.location} • {exp.period}</p>
+              </div>
+              
+              <!-- Highlights -->
+              <ul class={`space-y-2 ${index % 2 === 0 ? '' : 'md:text-left'}`}>
+                {exp.highlights.map((highlight) => (
+                  <li class="text-sm text-zinc-400 flex gap-2">
+                    <span class="text-zinc-600 shrink-0">•</span>
+                    <span>{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
