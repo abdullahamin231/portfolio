@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Platform Features Overview</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec80",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102219", // Deep obsidian green
+                        "card-dark": "#162e22", // Slightly lighter for cards
+                        "border-dark": "#2a5440", // Border color
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "mono": ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"],
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #2a5440 1px, transparent 1px), linear-gradient(to bottom, #2a5440 1px, transparent 1px)",
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #102219;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #2a5440;
+            border-radius: 2px;
+        }
+
+        .blueprint-grid {
+            background-size: 40px 40px;
+            mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased selection:bg-primary selection:text-background-dark min-h-screen flex flex-col">
+    <!-- Sticky Header -->
+    <header
+        class="sticky top-0 z-50 w-full backdrop-blur-md bg-background-light/80 dark:bg-background-dark/80 border-b border-gray-200 dark:border-border-dark transition-colors duration-300">
+        <div class="flex items-center justify-between p-4">
+            <button
+                class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-slate-900 dark:text-white">
+                <span class="material-symbols-outlined text-2xl">arrow_back</span>
+            </button>
+            <h2
+                class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
+                Platform Architecture</h2>
+            <button
+                class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-slate-900 dark:text-white">
+                <span class="material-symbols-outlined text-2xl">more_vert</span>
+            </button>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <main class="flex-1 w-full max-w-lg mx-auto pb-24 overflow-x-hidden">
+        <!-- Section 1: The Core Engine (Hero) -->
+        <section class="relative p-4 pt-6">
+            <!-- Background Grid Effect -->
+            <div class="absolute inset-0 z-0 opacity-10 pointer-events-none blueprint-grid bg-grid-pattern"></div>
+            <div class="relative z-10 flex flex-col gap-6">
+                <!-- Hero Card -->
+                <div
+                    class="group relative overflow-hidden rounded-2xl bg-card-dark border border-border-dark shadow-xl">
+                    <!-- Image/Diagram container -->
+                    <div class="aspect-[4/3] w-full bg-cover bg-center relative"
+                        data-alt="Abstract technical diagram showing data flow and processing nodes in emerald green on dark background"
+                        style='background-image: linear-gradient(to top, #162e22 0%, transparent 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAJ3W26RgRzIbsewA7OPk2CL28q_OnKtXhLdG_IzOr3KoeYnShwMmYvWYdTto4SR9xcndGmccEIWbKCwm4s-VOsOe9yk3m07V3Zq5F6QCHtCVIssphnQCULuZGY7D3msLF7tSSwL_NloVvUesgm0mDoWgErRkUWRO2Tr9Kb2fVyBJ19eZlwIr5gorgKYpaMtKVQGtWrI3VZsdoh-YQnBiIDtptmz5RI3gg_38fOZmiBuIZtMKwFdeLQlkTGPBjHbSYSd_eBdnEHC7NW");'>
+                        <!-- Floating Badge -->
+                        <div
+                            class="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/30 px-3 py-1">
+                            <span class="relative flex h-2 w-2">
+                                <span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                            </span>
+                            <span class="text-xs font-bold text-primary tracking-wide uppercase">C++ Engine
+                                Active</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h1 class="text-3xl font-black leading-tight tracking-tight text-white mb-3">
+                            Backtesting at <span class="text-primary">lightspeed</span>.
+                        </h1>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Proprietary C++ engine designed for HFT simulations. Process massive datasets without
+                            compromising precision.
+                        </p>
+                        <button
+                            class="w-full flex items-center justify-center gap-2 rounded-xl bg-primary hover:bg-primary/90 transition-all h-12 text-background-dark text-base font-bold shadow-[0_0_20px_rgba(19,236,128,0.2)]">
+                            <span class="material-symbols-outlined text-xl">speed</span>
+                            <span>View Benchmarks</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Stats Cluster -->
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="flex flex-col gap-1 rounded-xl bg-card-dark border border-border-dark p-4">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="material-symbols-outlined text-primary text-xl">bolt</span>
+                            <p class="text-gray-400 text-xs font-semibold uppercase tracking-wider">Throughput</p>
+                        </div>
+                        <p class="text-white font-mono text-2xl font-bold tracking-tight">1M+ <span
+                                class="text-sm text-gray-500 font-sans font-normal">Ticks/s</span></p>
+                    </div>
+                    <div class="flex flex-col gap-1 rounded-xl bg-card-dark border border-border-dark p-4">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="material-symbols-outlined text-primary text-xl">timer</span>
+                            <p class="text-gray-400 text-xs font-semibold uppercase tracking-wider">Latency</p>
+                        </div>
+                        <p class="text-white font-mono text-2xl font-bold tracking-tight">&lt;10<span
+                                class="text-primary">ms</span></p>
+                    </div>
+                    <div
+                        class="col-span-2 flex items-center justify-between rounded-xl bg-card-dark border border-border-dark p-4">
+                        <div class="flex flex-col gap-1">
+                            <p class="text-gray-400 text-xs font-semibold uppercase tracking-wider">System Uptime</p>
+                            <p class="text-white font-mono text-xl font-bold">99.99%</p>
+                        </div>
+                        <div class="h-10 w-px bg-border-dark mx-4"></div>
+                        <div class="flex flex-col gap-1 text-right">
+                            <p class="text-gray-400 text-xs font-semibold uppercase tracking-wider">Accuracy</p>
+                            <p class="text-white font-mono text-xl font-bold">Tick-Level</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section Divider -->
+        <div class="flex items-center gap-4 px-4 py-2 opacity-50">
+            <div class="h-px flex-1 bg-gradient-to-r from-transparent via-border-dark to-transparent"></div>
+            <span class="material-symbols-outlined text-gray-500 text-sm">architecture</span>
+            <div class="h-px flex-1 bg-gradient-to-r from-transparent via-border-dark to-transparent"></div>
+        </div>
+        <!-- Section 2: Visual Designer -->
+        <section class="p-4">
+            <div class="flex flex-col gap-4">
+                <div class="px-2">
+                    <h2 class="text-white text-2xl font-bold leading-tight tracking-tight">Visual Designer</h2>
+                    <p class="text-gray-400 text-sm mt-1">No code required. Just pure logic.</p>
+                </div>
+                <div class="rounded-2xl bg-card-dark border border-border-dark overflow-hidden shadow-lg">
+                    <!-- Header of the mockup window -->
+                    <div class="flex items-center justify-between bg-black/20 px-4 py-3 border-b border-border-dark">
+                        <div class="flex gap-1.5">
+                            <div class="w-2.5 h-2.5 rounded-full bg-red-500/20 border border-red-500/50"></div>
+                            <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/20 border border-yellow-500/50"></div>
+                            <div class="w-2.5 h-2.5 rounded-full bg-green-500/20 border border-green-500/50"></div>
+                        </div>
+                        <span class="text-[10px] font-mono text-gray-500">strategy_builder_v2.bk</span>
+                    </div>
+                    <!-- Content of the mockup -->
+                    <div class="relative bg-background-dark aspect-square w-full bg-cover bg-center"
+                        data-alt="Zoomed in screenshot of a node-based visual programming interface with connecting lines"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC8q-2QA37fBj4lD64XSh1PUoVhRfV3eVdSfQeVbbvrCk4KvHq0fuzcz2dlnSKT8QVfuHeoSlYNmcfC5vtO61SBbigWgOpFooRWe9fkHbafKojdj1qsy9gVg-e_rwmlBcHTgGe1_AG9oUmM3HP0EHc7NoOiU4bAKyNtelZYhzOpmUN1OKZoK2hl_rK1s0lOlg_wamc7aWJc4tAlXCLoBMHAbQrVxpf89Kk1wE_QTGsBj5U6z_1MCqaMxxEuwO3C0MRrsWVxYSbwWTdG");'>
+                        <!-- Simulated Overlay Interactions -->
+                        <div
+                            class="absolute bottom-4 right-4 left-4 p-4 rounded-xl bg-black/60 backdrop-blur-md border border-white/10">
+                            <p class="text-white font-medium text-sm mb-2">MACD Crossover Strategy</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-300">
+                                <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                <span>Logic Validated</span>
+                            </div>
+                            <button
+                                class="mt-3 w-full rounded-lg bg-primary/20 hover:bg-primary/30 text-primary text-xs font-bold py-2 border border-primary/20 transition-colors">
+                                Open Editor
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section 3: Data Integrity -->
+        <section class="p-4 pb-8">
+            <div
+                class="rounded-2xl bg-gradient-to-br from-card-dark to-[#0c1a13] border border-border-dark p-6 relative overflow-hidden">
+                <!-- Decorative background element -->
+                <div class="absolute -right-10 -top-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-2 rounded-lg bg-primary/10 text-primary">
+                            <span class="material-symbols-outlined">database</span>
+                        </div>
+                        <h2 class="text-white text-xl font-bold">Institutional Data</h2>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Reliable backtests start with clean data. We integrate directly with industry leaders to ensure
+                        tick-perfect accuracy.
+                    </p>
+                    <!-- Integration Badges -->
+                    <div class="flex flex-col gap-3">
+                        <div
+                            class="flex items-center justify-between p-3 rounded-xl bg-black/20 border border-border-dark">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded bg-white/5 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-white text-lg">electric_bolt</span>
+                                </div>
+                                <div>
+                                    <p class="text-white text-sm font-bold">LightningDB</p>
+                                    <p class="text-gray-500 text-[10px] uppercase tracking-wide">High Speed Storage</p>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-primary text-sm">check</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-between p-3 rounded-xl bg-black/20 border border-border-dark">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded bg-white/5 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-white text-lg">candlestick_chart</span>
+                                </div>
+                                <div>
+                                    <p class="text-white text-sm font-bold">Tiingo API</p>
+                                    <p class="text-gray-500 text-[10px] uppercase tracking-wide">Market Data Feed</p>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-primary text-sm">check</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Bottom Floating Action Button (Fixed) -->
+    <div class="fixed bottom-6 left-0 right-0 px-6 flex justify-center z-40 pointer-events-none">
+        <button
+            class="pointer-events-auto shadow-2xl shadow-primary/20 flex items-center gap-2 bg-primary text-background-dark font-bold text-lg px-8 py-3.5 rounded-full hover:scale-105 active:scale-95 transition-transform">
+            <span>Start Building</span>
+            <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
+    </div>
+</body>
+
+</html>
