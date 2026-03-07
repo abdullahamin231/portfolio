@@ -1,38 +1,43 @@
 ---
-import ProjectCard from './ProjectCard.astro';
+import ProjectCard from "./ProjectCard.astro";
 
 // Your selected projects with descriptions
 const projects = [
   {
     name: "Chess",
-    description: "A fully functional Chess game implementation with move validation, check/checkmate detection, and an interactive graphical interface.",
+    description:
+      "A fully functional Chess game implementation with move validation, check/checkmate detection, and an interactive graphical interface.",
     language: "C++",
-    url: "https://github.com/abdullahamin231/Chess"
+    url: "https://github.com/abdullahamin231/Chess",
   },
   {
     name: "Real-time Chat",
-    description: "A real-time messaging application built with Next.js, Socket.io, and Supabase for instant communication and persistent message storage.",
+    description:
+      "A real-time messaging application built with Next.js, Socket.io, and Supabase for instant communication and persistent message storage.",
     language: "TypeScript",
-    url: "https://github.com/abdullahamin231/next-socketio-supabase-realtime-chat"
+    url: "https://github.com/abdullahamin231/next-socketio-supabase-realtime-chat",
   },
   {
     name: "Backtesting Engine",
-    description: "A stock market backtesting tool written in C for analyzing trading strategies against historical data with performance metrics.",
+    description:
+      "A stock market backtesting tool written in C for analyzing trading strategies against historical data with performance metrics.",
     language: "C",
-    url: "https://github.com/abdullahamin231/backtesting-c"
+    url: "https://github.com/abdullahamin231/backtesting-c",
   },
   {
     name: "SDA Project",
-    description: "A Software Design & Architecture project demonstrating design patterns, SOLID principles, and clean architecture in Java.",
+    description:
+      "A Software Design & Architecture project demonstrating design patterns, SOLID principles, and clean architecture in Java.",
     language: "Java",
-    url: "https://github.com/abdullahamin231/sda-project"
+    url: "https://github.com/abdullahamin231/sda-project",
   },
   {
     name: "Plants vs Zombies",
-    description: "A recreation of the classic Plants vs Zombies game featuring tower defense mechanics, multiple plant types, and wave-based zombie attacks.",
+    description:
+      "A recreation of the classic Plants vs Zombies game featuring tower defense mechanics, multiple plant types, and wave-based zombie attacks.",
     language: "C++",
-    url: "https://github.com/abdullahamin231/PlantsVsZombiesCode"
-  }
+    url: "https://github.com/abdullahamin231/PlantsVsZombiesCode",
+  },
 ];
 ---
 
@@ -44,20 +49,24 @@ const projects = [
         Projects
       </h2>
       <p class="text-zinc-500 max-w-lg mx-auto">
-        A selection of projects I've built, ranging from systems programming to full-stack web applications.
+        A selection of projects I've built, ranging from systems programming to
+        full-stack web applications.
       </p>
     </div>
-    
+
     <!-- Projects grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {projects.map((project) => (
-        <ProjectCard 
-          name={project.name}
-          description={project.description}
-          language={project.language}
-          url={project.url}
-        />
-      ))}
+      {
+        projects.map((project) => (
+          <ProjectCard
+            name={project.name}
+            description={project.description}
+            language={project.language}
+            url={project.url}
+            showGithubLogo={true}
+          />
+        ))
+      }
     </div>
   </div>
 </section>
