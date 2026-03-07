@@ -1,31 +1,53 @@
 ---
-const links = [
+import ProjectCard from "./ProjectCard.astro";
+
+const pages = [
     {
-        name: "Landing",
+        name: "BacktestKing Landing",
+        description:
+            "Marketing landing page showcasing the quantitative trading platform, product positioning, and key features.",
+        language: "Next.js",
         url: "https://abdullahamin231.github.io/portfolio/work/backtestking/landing",
     },
     {
-        name: "Overview",
+        name: "BacktestKing Overview",
+        description:
+            "Technical overview of the platform architecture including the C++ backtesting engine, execution services, and frontend.",
+        language: "Next.js",
         url: "https://abdullahamin231.github.io/portfolio/work/backtestking/overview",
     },
     {
-        name: "Pricing",
+        name: "BacktestKing Pricing",
+        description:
+            "Pricing page outlining subscription tiers, trading limits, and product offerings for the platform.",
+        language: "Next.js",
         url: "https://abdullahamin231.github.io/portfolio/work/backtestking/pricing",
     },
 ];
 ---
 
-<div class="flex flex-wrap gap-3 mt-3">
-    {
-        links.map((link) => (
-            <a
-                href={link.url}
-                target="_blank"
-                rel="noopener"
-                class="px-3 py-1 text-xs rounded-md border border-zinc-800 text-zinc-400 hover:text-zinc-200 hover:border-zinc-700 transition-colors"
-            >
-                {link.name}
-            </a>
-        ))
-    }
-</div>
+<section id="work-pages" class="py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-zinc-100 mb-4">
+                Product Pages
+            </h2>
+            <p class="text-zinc-500 max-w-lg mx-auto">
+                Public-facing pages I designed for the BacktestKing platform.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {
+                pages.map((page) => (
+                    <ProjectCard
+                        name={page.name}
+                        description={page.description}
+                        language={page.language}
+                        url={page.url}
+                    />
+                ))
+            }
+        </div>
+    </div>
+</section>
