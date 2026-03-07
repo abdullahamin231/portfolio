@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Raj Rai Seafood | Premium Ocean Catch</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#000066",
+                        "background-light": "#f5f5f8",
+                        "background-dark": "#0f0f23",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        <!-- Header -->
+        <header
+            class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-3 justify-between border-b border-primary/10">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-3xl">set_meal</span>
+                <h2 class="text-primary dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">Raj Rai
+                    Seafood</h2>
+            </div>
+            <div class="flex gap-4 items-center">
+                <button class="flex items-center justify-center text-primary dark:text-slate-100">
+                    <span class="material-symbols-outlined">search</span>
+                </button>
+                <button class="relative flex items-center justify-center text-primary dark:text-slate-100">
+                    <span class="material-symbols-outlined">shopping_bag</span>
+                    <span
+                        class="absolute -top-1 -right-1 bg-primary text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center">2</span>
+                </button>
+            </div>
+        </header>
+        <!-- Hero Section -->
+        <section class="px-4 py-4">
+            <div class="relative h-64 w-full overflow-hidden rounded-xl bg-primary/10 group">
+                <img class="h-full w-full object-cover brightness-75" data-alt="Premium fresh king prawns on ice"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuALrILM7YnWbBAVM82DL4QXuFuqf5K1XwQyoMvCMfK1BRTqVIUXQJYsPWNy1TKvmp0beIBD6-l5YKU2oM42jrRC_Q0xHpvPXmu2oqsrTg0nBVE8RGqIvA0vN3te-jBjTk2hq9ZImMRgMk5TUBtBuwQOenAJT4nWEqRh0bksXsCrdI1uw_ZMiEivHQ1CcXooEA9fEKnL8MRiI3N3gEiSF5dd3KkGkfbXcimASD7cBeI2bqC_NRMKbkLxi8L8yh4S3c2a3FkPaSkkqJhY" />
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-6">
+                    <span
+                        class="text-primary/20 text-xs font-bold uppercase tracking-widest mb-2 bg-white/20 w-fit px-2 py-1 rounded">Est.
+                        1995</span>
+                    <h1 class="text-white text-3xl font-bold leading-tight mb-2">Ocean Freshness Delivered.</h1>
+                    <p class="text-slate-200 text-sm max-w-[280px]">Sourcing the finest seafood from sustainable waters
+                        directly to your kitchen.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Introduction Section -->
+        <section class="px-4 py-6 text-center">
+            <h2 class="text-primary dark:text-slate-100 text-2xl font-bold mb-3">About Raj Rai Seafood</h2>
+            <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
+                For over two decades, we've specialized in bringing premium, export-quality seafood to discerning
+                customers. Our commitment to cold-chain excellence ensures every catch arrives as fresh as the moment it
+                left the water.
+            </p>
+        </section>
+        <!-- Product Categories -->
+        <section class="px-4 py-6">
+            <div class="flex justify-between items-end mb-4">
+                <h3 class="text-primary dark:text-slate-100 text-xl font-bold">Categories</h3>
+                <a class="text-primary font-semibold text-sm" href="#">View All</a>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+                <!-- Category Card 1 -->
+                <div class="bg-white dark:bg-slate-800 rounded-lg overflow-hidden border border-primary/5 shadow-sm">
+                    <div class="h-28 overflow-hidden">
+                        <img class="h-full w-full object-cover" data-alt="Fresh raw whole fish on market stall"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmuGyBvGIJXFFzVL2iHyUVfPy0uT0WPoUfm4cGleByh625tHtMIYFAxZv-LNRvXcYmmnCZQOWHQtSEvl3vpmyLV3e6wRatt27wNy-nhSxoIWBaGHXqrLTNHTOYIY4Bpn-DGcE4HJIfuU0e2OCytT2CEYPRUE45Yka_kRXsLJvChN04y_IXwrV46JVqEQgxmNbmuxdNLrJ_UOy022o3X5UAu9LSjFKEW0kwQM5xjrbG5ikaAFt_iGrb8SQ8LyoseSceTyESJ0ONGXo6" />
+                    </div>
+                    <div class="p-3 text-center">
+                        <span class="text-sm font-bold text-slate-800 dark:text-slate-100">Fresh Fish</span>
+                    </div>
+                </div>
+                <!-- Category Card 2 -->
+                <div class="bg-white dark:bg-slate-800 rounded-lg overflow-hidden border border-primary/5 shadow-sm">
+                    <div class="h-28 overflow-hidden">
+                        <img class="h-full w-full object-cover" data-alt="Tiger prawns on ice display"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrRYyGu2LX4PLWOMZRsqY2bP224YywlyJNI2XniK4AGiPzxF_tDaKS9vzDpjk3dZckVqj_YGfnv6Db9VKyrlPYJxWY4A0EfVeutZ2-VW2RC34KuEqLSwhqq0-us1BHoGddRh2egQHonwyyt-BR7Tg4nKV9NCicEBAFKLzfqipdPjYqWAWZ6Jf0TN3PL3aghqEtAW2_ocbsFSfinpnoP5gZh5tXs6-PbCKEph0HcVgKtxn6jQ-XATGcXF2XGnyoEMycgqAFByJ54_sZ" />
+                    </div>
+                    <div class="p-3 text-center">
+                        <span class="text-sm font-bold text-slate-800 dark:text-slate-100">Tiger Prawns</span>
+                    </div>
+                </div>
+                <!-- Category Card 3 -->
+                <div class="bg-white dark:bg-slate-800 rounded-lg overflow-hidden border border-primary/5 shadow-sm">
+                    <div class="h-28 overflow-hidden">
+                        <img class="h-full w-full object-cover" data-alt="Fresh squid and calamari rings"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHgH9rsDG2VxN9_8fg9H5r3gQskmyg0XEbZzi_Xc2Ts7UdihayjrZXhG6nRr3jqc9b3sUyZpXVOlb1QiPVgBrkB_FpViDsQgD7KFOU4jq1WZRXtwT3Fm0vAu24aRvcIWCzWr8GhSXsf8YCTkYPO3tibkzm9WHxsSrwH1mcU1auvqBINpVgaJCWxDOfZdZuyuHWE0i7isbTKoHBO84hlWMhdrvPmpUFNtTDQqYnpWliIknzQ1NyvWLl-mYCPKQ-iFEKvVUZeBuj2cL7" />
+                    </div>
+                    <div class="p-3 text-center">
+                        <span class="text-sm font-bold text-slate-800 dark:text-slate-100">Squid &amp; Shells</span>
+                    </div>
+                </div>
+                <!-- Category Card 4 -->
+                <div class="bg-white dark:bg-slate-800 rounded-lg overflow-hidden border border-primary/5 shadow-sm">
+                    <div class="h-28 overflow-hidden">
+                        <img class="h-full w-full object-cover" data-alt="Packaged frozen seafood variety"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGxZz0VRl0OB4lmvRPlWIi7CQJ-421HyFpTM3xnpyYvBHX50qfnZy0imqPysKsrJYx1OEFlj_9pUbsHEZ0YsddjBEIIm7tCOeAJUFafNEsBmAfLqeLNnXwDHodVwivbh-QEKB1skuFuusyklezHRpVBFeW2SMED6vDTUOyzDFxwKuXgOHPCsqee_ntoiadkq7VSS0-A3sfkKdmWtVbr3ro-kP28lB6EQVB0hFPrXlHdS0-AHhyEQc8THudyLoDUHO0egy8hW-IggmN" />
+                    </div>
+                    <div class="p-3 text-center">
+                        <span class="text-sm font-bold text-slate-800 dark:text-slate-100">Frozen Range</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Why Choose Us -->
+        <section class="bg-primary/5 dark:bg-primary/10 px-4 py-8 my-4">
+            <h3 class="text-primary dark:text-slate-100 text-xl font-bold mb-6 text-center">The Raj Rai Difference</h3>
+            <div class="space-y-6">
+                <div class="flex gap-4">
+                    <div class="bg-primary/10 dark:bg-primary/30 p-3 rounded-full h-fit">
+                        <span class="material-symbols-outlined text-primary dark:text-slate-200">verified_user</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 dark:text-slate-100">Certified Quality</h4>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Strict hygiene standards and FDA-approved
+                            processing facilities.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="bg-primary/10 dark:bg-primary/30 p-3 rounded-full h-fit">
+                        <span class="material-symbols-outlined text-primary dark:text-slate-200">ac_unit</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 dark:text-slate-100">Cold Chain Mastery</h4>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Advanced temperature monitoring from port
+                            to your doorstep.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="bg-primary/10 dark:bg-primary/30 p-3 rounded-full h-fit">
+                        <span class="material-symbols-outlined text-primary dark:text-slate-200">local_shipping</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 dark:text-slate-100">Fast Delivery</h4>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Next-day delivery across metropolitan
+                            areas for maximum freshness.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Gallery -->
+        <section class="px-4 py-6">
+            <h3 class="text-primary dark:text-slate-100 text-xl font-bold mb-4">Our Gallery</h3>
+            <div class="flex gap-3 overflow-x-auto no-scrollbar pb-4">
+                <div class="min-w-[200px] h-48 rounded-lg overflow-hidden shrink-0">
+                    <img class="h-full w-full object-cover" data-alt="Gourmet prepared salmon dish"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8qMBb8Abqru-pUgp0g664qd6g9YRAT3G903AYeoEX1JoqhFk668151SmWEPWfE-N-0vxwSrtOjX1qU_-rK4Yotta-y7XN6dSM0rCTcdw6rxjuOSJAV7vRtJZypsjjCRV6raA6Dkok3MzfnlZgcW1RabpQfZLypgu6ox5YtApN86VTKmzqC_H7yXr2L3Uk886KQoVz5Idj_5m5sVsEK27woKVaBoycq4i2L2eTNq4MCpFgZzTQTJAEMZMr7t8E-Cy_uASrHkI3G-D2" />
+                </div>
+                <div class="min-w-[200px] h-48 rounded-lg overflow-hidden shrink-0">
+                    <img class="h-full w-full object-cover" data-alt="Professional chefs preparing seafood"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJxQB01IO7xBS0cjsat_V69FqEl9ISDjnvJrN0DHPTldCnQgFKZUYX9K99Zz2AFirTh5ZCMf4rUtYqaSnPcII3Kqdb1nGmZrHf712u2knjhLTZHhBmMK1h1fp07fVRhKTe66eQcihlQkApECqOwSVvQB0tFu8ICsiRWRN9gWThkYBo8cfCrkS7KRoESA7yHmzUKndkcVyKUBX5rR7u-WCTW-YLXb_AxNFOJrm61YkUbDeqNuc9cC6pC87wT_sjCSGmjJVjG50q83yF" />
+                </div>
+                <div class="min-w-[200px] h-48 rounded-lg overflow-hidden shrink-0">
+                    <img class="h-full w-full object-cover" data-alt="Fresh lobster tail on plate"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCWxZ0vvdpf-LkKDFL8rcx5bCrNR871YnFYS6-HYVOYa2xlJXNc9gPoeOzm43wA9XYhNqt5d-VDwYXjh_y0Q-Y3uYcA3mZVk7fCkp3K3z2khuqA_mK5sjWjj5OPERT2AVO5SNPXTsONTG_io-Kp5iIB0kPGxnaLcvajTYNxepXz74LaR7U_jgvDXM4g9GoihJtg58FK1FM3AS5qmqNu50JY-j3d48EniPJrBun_NR-vIUDU18QKKm8WSJcVinR0UEU6YjBNuXV56VU" />
+                </div>
+            </div>
+        </section>
+        <!-- Footer Contact -->
+        <footer class="bg-primary text-white p-8 mt-auto pb-24">
+            <div class="flex flex-col gap-6">
+                <div>
+                    <h2 class="text-xl font-bold mb-2">Raj Rai Seafood</h2>
+                    <p class="text-slate-300 text-sm">Providing quality seafood since 1995.</p>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-sm">location_on</span>
+                        <p class="text-sm text-slate-200" data-location="Bangkok">123 Coastal Road, Seafood District,
+                            BKK</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-sm">phone</span>
+                        <p class="text-sm text-slate-200">+66 (0) 2 123 4567</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-sm">mail</span>
+                        <p class="text-sm text-slate-200">contact@rajraiseafood.com</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 pt-4 border-t border-white/10">
+                    <span class="material-symbols-outlined">social_leaderboard</span>
+                    <span class="material-symbols-outlined">share</span>
+                    <span class="material-symbols-outlined">alternate_email</span>
+                </div>
+                <p class="text-[10px] text-slate-400 text-center pt-4">© 2024 Raj Rai Seafood Co., Ltd. All rights
+                    reserved.</p>
+            </div>
+        </footer>
+        <!-- Bottom Navigation Bar -->
+        <nav
+            class="fixed bottom-0 left-0 right-0 z-50 flex border-t border-primary/10 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm px-4 pb-6 pt-2">
+            <a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+                <span class="material-symbols-outlined fill-1">home</span>
+                <p class="text-[10px] font-bold">Home</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400"
+                href="#">
+                <span class="material-symbols-outlined">restaurant_menu</span>
+                <p class="text-[10px] font-medium">Products</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400"
+                href="#">
+                <span class="material-symbols-outlined">receipt_long</span>
+                <p class="text-[10px] font-medium">Orders</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400"
+                href="#">
+                <span class="material-symbols-outlined">person</span>
+                <p class="text-[10px] font-medium">Profile</p>
+            </a>
+        </nav>
+    </div>
+</body>
+
+</html>

@@ -1,54 +1,91 @@
 ---
 import ProjectCard from "./ProjectCard.astro";
 
-const pages = [
+const groups = [
     {
-        name: "BacktestKing Landing",
-        description:
-            "Marketing landing page showcasing the quantitative trading platform, product positioning, and key features.",
-        language: "Next.js",
-        url: "https://abdullahamin231.github.io/portfolio/work/backtestking/landing",
+        name: "BacktestKing",
+        pages: [
+            {
+                name: "Landing",
+                description:
+                    "Marketing landing page showcasing the quantitative trading platform, product positioning, and key features.",
+                language: "Next.js",
+                url: "https://abdullahamin231.github.io/portfolio/work/backtestking/landing",
+            },
+            {
+                name: "Overview",
+                description:
+                    "Technical overview of the platform architecture including the C++ backtesting engine, execution services, and frontend.",
+                language: "Next.js",
+                url: "https://abdullahamin231.github.io/portfolio/work/backtestking/overview",
+            },
+            {
+                name: "Pricing",
+                description:
+                    "Pricing page outlining subscription tiers, trading limits, and product offerings for the platform.",
+                language: "Next.js",
+                url: "https://abdullahamin231.github.io/portfolio/work/backtestking/pricing",
+            },
+        ],
     },
     {
-        name: "BacktestKing Overview",
-        description:
-            "Technical overview of the platform architecture including the C++ backtesting engine, execution services, and frontend.",
-        language: "Next.js",
-        url: "https://abdullahamin231.github.io/portfolio/work/backtestking/overview",
-    },
-    {
-        name: "BacktestKing Pricing",
-        description:
-            "Pricing page outlining subscription tiers, trading limits, and product offerings for the platform.",
-        language: "Next.js",
-        url: "https://abdullahamin231.github.io/portfolio/work/backtestking/pricing",
+        name: "Seafood Website",
+        pages: [
+            {
+                name: "Landing",
+                description:
+                    "Landing page introducing the seafood brand and its offerings.",
+                language: "Next.js",
+                url: "https://abdullahamin231.github.io/portfolio/work/seafood/landing",
+            },
+            {
+                name: "About",
+                description:
+                    "About page describing the company, sourcing, and mission.",
+                language: "Next.js",
+                url: "https://abdullahamin231.github.io/portfolio/work/seafood/about",
+            },
+            {
+                name: "Products",
+                description:
+                    "Product catalog displaying available seafood items.",
+                language: "Next.js",
+                url: "https://abdullahamin231.github.io/portfolio/work/seafood/products",
+            },
+            {
+                name: "Contact",
+                description:
+                    "Contact page with inquiry form and company details.",
+                language: "Next.js",
+                url: "https://abdullahamin231.github.io/portfolio/work/seafood/contact",
+            },
+        ],
     },
 ];
 ---
 
 <section id="work-pages" class="py-24 px-6">
-    <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-zinc-100 mb-4">
-                Product Pages
-            </h2>
-            <p class="text-zinc-500 max-w-lg mx-auto">
-                Public-facing pages I designed for the BacktestKing platform.
-            </p>
-        </div>
+    <div class="max-w-6xl mx-auto space-y-20">
+        {
+            groups.map((group) => (
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-zinc-100 mb-8">
+                        {group.name}
+                    </h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {
-                pages.map((page) => (
-                    <ProjectCard
-                        name={page.name}
-                        description={page.description}
-                        language={page.language}
-                        url={page.url}
-                        showGithubLogo={false}
-                    />
-                ))
-            }
-        </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {group.pages.map((page) => (
+                            <ProjectCard
+                                name={page.name}
+                                description={page.description}
+                                language={page.language}
+                                url={page.url}
+                                showGithubLogo={false}
+                            />
+                        ))}
+                    </div>
+                </div>
+            ))
+        }
     </div>
 </section>
